@@ -58,6 +58,7 @@ function Login({ currentUser }) {
               placeholder="Usuario"
               onChange={formik.handleChange}
               value={formik.values.email}
+              required
             />
 
             <input
@@ -67,6 +68,7 @@ function Login({ currentUser }) {
               placeholder="Contraseña"
               onChange={formik.handleChange}
               value={formik.values.password}
+              required
             />
             <button className="btn-submit" type="submit">
               <h1 className="btn-submit-text">Iniciar sesión</h1>
