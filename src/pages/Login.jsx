@@ -16,8 +16,7 @@ function Login({ currentUser }) {
     },
   });
 
-  const signInWithEmail = async (e, email, password) => {
-    e.preventDefault();
+  const signInWithEmail = async (email, password) => {
     try {
       const { user } = await signInWithEmailAndPassword(auth, email, password);
       if (user) {
@@ -29,12 +28,16 @@ function Login({ currentUser }) {
     }
   };
   const signWithGoogle = async () => {
-    const { user } = await signInWithPopup(auth, googleProvider);
-    console.log(user);
-
-    if (user) {
-      const userToken = await user.getIdToken();
-      console.log("ID Token:", userToken);
+    try {
+      const { user } = await signInWithPopup(auth, googleProvider);
+      console.log(user);
+      if (user) {
+        //Esto seria el token que tenemos que mandar al back
+        const userToken = await user.getIdToken();
+        console.log("ID Token:", userToken);
+      }
+    } catch (error) {
+      console.log("Error al logearse ");
     }
   };
 
