@@ -1,0 +1,16 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  background: #d9d9d9;
+  height: 128px;
+  width: 128px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.logo-text {
+  font-size: 30px;
+}

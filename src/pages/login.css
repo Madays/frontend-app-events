@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+input {
+  font: inherit;
+  color: inherit;
+  height: 3.5rem;
+  border: 1px solid #ababab;
+  background: #fff;
+  padding-left: 10px;
+  border-radius: 14px 14px 14px 14px;
+  -webkit-border-radius: 14px 14px 14px 14px;
+  -moz-border-radius: 14px 14px 14px 14px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.form-title {
+  font-weight: 500;
+  text-align: left;
+  font-size: 20px;
+  line-height: 27px;
+  /* Add this line to position the form title in the left of the form container */
+  align-self: flex-start;
+  margin-bottom: 30px;
+}
+
+.input-password:focus,
+.input-email:focus {
+  border-color: #151515;
+}
+
+.btn-submit {
+  background-color: #c9c9c9;
+  border-radius: 15px;
+  height: 47px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  margin-bottom: 25px;
+  border: none;
+}
+.btn-submit-text {
+  text-align: center;
+  color: #242424;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+.btn-submit:active,
+.btn-submit:hover {
+  background-color: #b4b4b4;
+}
+.form-subtitle {
+  text-align: center;
+  color: #000;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.registrate-link {
+  margin-left: 5px;
+  font-weight: 700;
+}
+.separador {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 1px;
+  background-color: #000;
+  width: 90%;
+}
+.btn-google,
+.btn-facebook {
+  margin-bottom: 10px;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  width: 90%;
+  height: 47px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 1px solid #4f4f4f;
+}
+.btn-facebook:focus,
+.btn-google:focus {
+  background-color: #f4f4f4;
+}
