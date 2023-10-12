@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
+/* Esto hay que cambiar por las clases probablemnte por que afecta todos los input aunque no cargen este css */
 input {
   font: inherit;
   color: inherit;
