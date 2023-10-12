@@ -79,6 +79,8 @@ input {
 .registrate-link {
   margin-left: 5px;
   font-weight: 700;
+  text-decoration: none;
+  color: #242424;
 }
 .separador {
   margin-top: 20px;

@@ -1,5 +1,6 @@
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useFormik } from "formik";
+import { Link } from "react-router-dom";
 import { auth, googleProvider } from "../../firebase-config";
 import Logo from "../components/logo";
 import LoggedUserPage from "./LoggedUserPage";
@@ -75,7 +76,10 @@ function Login({ currentUser }) {
             </button>
             <h2 className="form-subtitle">
               ¿No tenés cuenta?
-              <span className="registrate-link">Registrate</span>.
+              <Link to={"signup"} className="registrate-link">
+                Registrate
+              </Link>
+              .
             </h2>
           </form>
           <div className="separador"></div>
