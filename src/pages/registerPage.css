@@ -1,0 +1,12 @@
+.form-title-signup {
+  font-weight: 500;
+  text-align: left;
+  font-size: 20px;
+  line-height: 27px;
+  align-self: flex-start;
+  margin-bottom: 30px;
+}
+
+.input-registro {
+  border-color: #151515;
+}
