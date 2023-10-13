@@ -76,7 +76,7 @@ function Login({ currentUser }) {
             </button>
             <h2 className="form-subtitle">
               ¿No tenés cuenta?
-              <Link to={"signup"} className="registrate-link">
+              <Link to={"../signup"} className="registrate-link">
                 Registrate
               </Link>
               .
