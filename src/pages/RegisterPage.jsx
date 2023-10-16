@@ -19,9 +19,8 @@ function RegisterPage() {
       nombre: "",
       apellido: "",
       email: "",
+      nombreUsuario: "",
       password: "",
-      telefono: "",
-      genero: "",
     },
 
     onSubmit: ({ email, password }) => {
@@ -32,13 +31,15 @@ function RegisterPage() {
   });
 
   return (
-    <div className="form-container">
-      <Logo />
-      <form onSubmit={formik.handleSubmit} className="formulario">
-        <h1 className="form-title">Registrate</h1>
+    <div className="container font-nunito">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="w-[90%] flex flex-col gap-4"
+      >
+        <h1 className="text-left text-xl mb-4">Registrate</h1>
 
         <input
-          className="input-nombre input-registro"
+          className="border  p-[10px] rounded-[14px] h-12 outline-none border-dark focus:border-accent active:border-accent"
           type="text"
           name="nombre"
           placeholder="Nombre"
@@ -47,7 +48,7 @@ function RegisterPage() {
           required
         />
         <input
-          className="input-apellido input-registro"
+          className="h-12 border  p-[10px] rounded-[14px] outline-none border-dark focus:border-accent active:border-accent"
           type="text"
           name="apellido"
           placeholder="Apellido"
@@ -56,7 +57,7 @@ function RegisterPage() {
           required
         />
         <input
-          className="input-email input-registro"
+          className="h-12 border  p-[10px] rounded-[14px] outline-none border-dark focus:border-accent active:border-accent "
           type="text"
           name="email"
           placeholder="Email"
@@ -64,9 +65,18 @@ function RegisterPage() {
           value={formik.values.email}
           required
         />
+        <input
+          className="h-12 border  p-[10px] rounded-[14px] outline-none border-dark focus:border-accent active:border-accent"
+          type="text"
+          name="nombreUsuario"
+          placeholder="Nombre de usuario"
+          onChange={formik.handleChange}
+          value={formik.values.nombreUsuario}
+          required
+        />
 
         <input
-          className="input-password input-registro"
+          className="h-12 border  p-[10px] rounded-[14px] outline-none border-dark focus:border-accent active:border-accent"
           type="password"
           name="password"
           placeholder="Contraseña"
@@ -74,36 +84,24 @@ function RegisterPage() {
           value={formik.values.password}
           required
         />
-        <input
-          className="input-telefono input-registro"
-          type="text"
-          name="telefono"
-          placeholder="Telefono"
-          onChange={formik.handleChange}
-          value={formik.values.telefono}
-          required
-        />
-        <input
-          className="input-genero input-registro"
-          type="text"
-          name="genero"
-          placeholder="Genero"
-          onChange={formik.handleChange}
-          value={formik.values.genero}
-          required
-        />
 
-        <button className="btn-submit" type="submit">
-          <h1 className="btn-submit-text">Registrarse</h1>
+        <button
+          className="btn-primary btn-md rounded-[15px] p-4 mb-8 h-12 mt-8 flex justify-center items-center"
+          type="submit"
+        >
+          <h1 className="text-center text-sm text-white">Registrarse</h1>
         </button>
-        <h2 className="form-subtitle">
-          Ya tenes cuenta?
-          <Link to={"../login"} className="registrate-link">
-            Inicia Sesion
-          </Link>
-          .
-        </h2>
       </form>
+      <div className=" mb-8 h-[1px] bg-grayB w-72"></div>
+      <button className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none w-[90%] border-dark flex justify-center items-center gap-4 active:opacity-90 active:bg-gray-200 hover:opacity-85">
+        <img src="/IconoGoogle.svg" alt="google icon" />
+        <p>Iniciar sesión con Google</p>
+      </button>
+      <button className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none w-[90%] border-dark flex justify-center items-center gap-4 active:opacity-90 active:bg-gray-200 hover:opacity-85">
+        <img src="/iconoFacebook.svg" alt="facebook icon" />
+
+        <p>Iniciar sesión con Facebook</p>
+      </button>
     </div>
   );
 }

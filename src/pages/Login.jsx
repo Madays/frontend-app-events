@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { auth, googleProvider } from "../../firebase-config";
 import Logo from "../components/logo";
 import LoggedUserPage from "./LoggedUserPage";
-import "./login.css";
 
 function Login({ currentUser }) {
   const formik = useFormik({
@@ -47,13 +46,16 @@ function Login({ currentUser }) {
       {currentUser ? (
         <LoggedUserPage currentUser={currentUser} />
       ) : (
-        <div className="form-container">
+        <div className="flex flex-col items-center font-nunito container">
           <Logo />
-          <form onSubmit={formik.handleSubmit} className="formulario">
-            <h1 className="form-title">Iniciar sesión</h1>
+          <form
+            onSubmit={formik.handleSubmit}
+            className="w-[90%] flex flex-col"
+          >
+            <h1 className="text-left text-xl mb-4  ">Iniciar sesión</h1>
 
             <input
-              className="input-email"
+              className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none border-dark focus:border-accent active:border-accent"
               type="text"
               name="email"
               placeholder="Usuario"
@@ -63,7 +65,7 @@ function Login({ currentUser }) {
             />
 
             <input
-              className="input-password"
+              className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none border-dark focus:border-accent active:border-accent"
               type="password"
               name="password"
               placeholder="Contraseña"
@@ -71,22 +73,35 @@ function Login({ currentUser }) {
               value={formik.values.password}
               required
             />
-            <button className="btn-submit" type="submit">
-              <h1 className="btn-submit-text">Iniciar sesión</h1>
+            <button
+              className="btn-primary btn-md rounded-[15px] p-4 mb-16 mt-8 flex justify-center items-center"
+              type="submit"
+            >
+              <h1 className="text-center text-sm text-white ">
+                Iniciar sesión
+              </h1>
             </button>
-            <h2 className="form-subtitle">
+            <h2 className="text-center text-dark font-normal text-base ">
               ¿No tenés cuenta?
-              <Link to={"../signup"} className="registrate-link">
+              <Link to={"../signup"} className="font-bold ml-1">
                 Registrate
               </Link>
               .
             </h2>
           </form>
-          <div className="separador"></div>
-          <button className="btn-google" onClick={signWithGoogle}>
-            Iniciar sesión con Google
+          <div className="mt-4 mb-8 h-[1px] bg-grayB w-72"></div>
+          <button
+            className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none w-[90%] border-dark flex justify-center items-center gap-4 active:opacity-90 active:bg-gray-200 hover:opacity-85"
+            onClick={signWithGoogle}
+          >
+            <img src="/IconoGoogle.svg" alt="google icon" />
+            <p>Iniciar sesión con Google</p>
           </button>
-          <button className="btn-facebook">Iniciar sesión con Facebook</button>
+          <button className="h-12 border  p-[10px] rounded-[14px] mb-5 outline-none w-[90%] border-dark flex justify-center items-center gap-4 active:opacity-90 active:bg-gray-200 hover:opacity-85">
+            <img src="/iconoFacebook.svg" alt="facebook icon" />
+
+            <p>Iniciar sesión con Facebook</p>
+          </button>
         </div>
       )}
     </>

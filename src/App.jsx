@@ -17,9 +17,9 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div>
       <Login currentUser={user} />
-    </>
+    </div>
   );
 }
 
