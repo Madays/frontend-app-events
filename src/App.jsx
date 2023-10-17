@@ -5,6 +5,7 @@ import { auth } from "../firebase-config";
 import "./App.css";
 
 import Login from "./pages/Login";
+import LandingPage from "./pages/landingPage";
 
 function App() {
   const [user, setUser] = useState({});
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Login currentUser={user} />
+      <LandingPage />
     </>
   );
 }
